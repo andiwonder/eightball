@@ -22,14 +22,14 @@ var prompts = ["It is certain",
 "My reply is no",
 "My sources say no",
 "Outlook not so good",
-"Very doubtful"]
+"Very doubtful"];
 
 var server = net.createServer(function(connection){
-	connection.write("Lets start")
+	connection.write("Lets start\n")
 	connection.on("data", function (datafromClient){
 		var rand = prompts[Math.floor(Math.random() * prompts.length)];
-		connection.write(prompts[rand]);
-	}) 
+		connection.write(rand);
+	});
 });
 
 
